@@ -32,43 +32,30 @@ public class CardTrick {
             c.setSuit(Card.SUITS[randSuitValue]);
             magicHand[i] = c;
         }
-        
+
         //Create a hard-card Card object with card value of 1 and suit value of "Hearts"
         Card luckyCard = new Card();
         luckyCard.setValue(1);
         luckyCard.setSuit(Card.SUITS[0]);
-        
-        //insert code to ask the user for Card value and suit, create their card
-        Card searchCard = new Card();
-        Scanner input = new Scanner(System.in);
 
-        System.out.println("Enter the card value and suit you want to search "
-                + "for in your hand ");
-        System.out.print("Enter card value [1-13]: ");
-        searchCard.setValue(input.nextInt());
-
-        System.out.print("Enter suit value [Hearts, Diamonds, Spades, "
-                + "Clubs]: ");
-        searchCard.setSuit(input.next());
-
-        //Search the magic hand to see if it contains the card the user inputted
+        //Search the magic hand to see if it contains the lucky card
         boolean foundSearchCard = false;
         System.out.println();
 
         for (Card card : magicHand) {
-            if (card.getValue() == searchCard.getValue()
-                    && card.getSuit().equals(searchCard.getSuit())) {
+            if (card.getValue() == luckyCard.getValue()
+                    && card.getSuit().equals(luckyCard.getSuit())) {
                 foundSearchCard = true;
             }
         }
 
-        //Print the result of whether the card the user searched for is found
+        //Print the result of whether the lucky card is found
         if (foundSearchCard) {
-            System.out.println("Found card (" + searchCard.getValue() + ", "
-                    + searchCard.getSuit() + ")!");
+            System.out.println("YOU WIN, found the lucky card (" 
+                    + luckyCard.getValue() + ", " + luckyCard.getSuit() + ")!");
         } else {
-            System.out.println("Did not find card (" + searchCard.getValue() 
-                    + ", " + searchCard.getSuit() + ")!");
+            System.out.println("YOU LOSE, did not find the lucky card (" 
+                    + luckyCard.getValue() + ", " + luckyCard.getSuit() + ")!");
         }
 
     }
