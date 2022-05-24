@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package ca.sheridancollege.week3.softwarefundamentals.ice1;
+import java.util.Random;
+import java.util.Scanner;
 
 /**
  * A class that fills a magic hand of 7 cards with random Card Objects
@@ -15,13 +17,20 @@ public class CardTrick {
     
     public static void main(String[] args)
     {
+        Random rand = new Random();
         Card[] magicHand = new Card[7];
         
+        //Fill the magic hand with random cards
         for (int i=0; i<magicHand.length; i++)
         {
             Card c = new Card();
+            int randValue = rand.nextInt(13) + 1;
+            int randSuitValue = rand.nextInt(3) + 1;
             //c.setValue(insert call to random number generator here)
+            c.setValue(randValue);
             //c.setSuit(Card.SUITS[insert call to random number between 0-3 here])
+            c.setSuit(Card.SUITS[randSuitValue]);
+            magicHand[i] = c;
         }
         
         //insert code to ask the user for Card value and suit, create their card
