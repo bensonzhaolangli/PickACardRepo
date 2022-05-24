@@ -48,17 +48,23 @@ public class CardTrick {
 
         //Search the magic hand to see if it contains the card the user inputted
         boolean foundSearchCard = false;
-        System.out.println(); 
-                
-        for(Card card: magicHand){
-            if(card.getValue() == searchCard.getValue() && 
-                    card.getSuit().equals(searchCard.getSuit())){
+        System.out.println();
+
+        for (Card card : magicHand) {
+            if (card.getValue() == searchCard.getValue()
+                    && card.getSuit().equals(searchCard.getSuit())) {
                 foundSearchCard = true;
             }
         }
 
-        //Then report the result here
+        //Print the result of whether the card the user searched for is found
+        if (foundSearchCard) {
+            System.out.println("Found card (" + searchCard.getValue() + ", "
+                    + searchCard.getSuit() + ")!");
+        } else {
+            System.out.println("Did not find card (" + searchCard.getValue() 
+                    + ", " + searchCard.getSuit() + ")!");
+        }
 
     }
 }
-
