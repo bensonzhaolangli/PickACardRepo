@@ -32,7 +32,12 @@ public class CardTrick {
             c.setSuit(Card.SUITS[randSuitValue]);
             magicHand[i] = c;
         }
-
+        
+        //Create a hard-card Card object with card value of 1 and suit value of "Hearts"
+        Card luckyCard = new Card();
+        luckyCard.setValue(1);
+        luckyCard.setSuit(Card.SUITS[0]);
+        
         //insert code to ask the user for Card value and suit, create their card
         Card searchCard = new Card();
         Scanner input = new Scanner(System.in);
